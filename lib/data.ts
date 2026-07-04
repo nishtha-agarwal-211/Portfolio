@@ -62,8 +62,8 @@ export const experience: ExperienceEntry[] = [
     location: "Vapi, Gujarat",
     bullets: [
       "Run supply chain and logistics for a weekly community food drive, serving 2,000–2,500 underserved individuals every Wednesday.",
-      "Designed educational outreach initiatives and coordinated sponsorship funding covering annual education costs for 30 underserved children.",
-      "Oversee community healthcare initiatives — organizing medical camps and sponsoring critical treatment for 50+ individuals.",
+      "Designed educational outreach initiatives and coordinated sponsorship funding covering annual education costs for 30+ underserved children every year.",
+      "Oversee community healthcare initiatives — organizing medical camps and sponsoring critical treatment for 50+ individuals every year.",
       "Organize monthly cleanliness and sanitation drives, mobilizing community volunteers and local resources.",
       "Collaborate with local leaders, donors, and student volunteers to allocate budget and scale outreach.",
     ],
@@ -76,6 +76,15 @@ export const experience: ExperienceEntry[] = [
       "Merged 80+ pull requests across real-world open source projects under GSSoC '26, collaborating with maintainers globally.",
       "Write clean, production-ready code across diverse tech stacks while actively participating in code reviews.",
       "Identify issues and propose solutions under the guidance of experienced project mentors.",
+    ],
+  },
+  {
+    org: "Elite Coders Winter of Code (ECWoC)",
+    role: "Open Source Contributor",
+    period: "December 2025 — February 2026",
+    bullets: [
+      "Contributed to open source projects as part of ECWoC 2025, among 5,000+ participants worldwide.",
+      "Demonstrated dedication to the developer community through consistent, quality contributions.",
     ],
   },
 ];
@@ -241,10 +250,11 @@ export const projects: Project[] = [
 export const skillGroups = [
   { label: "AI / ML", items: ["RAG", "Gemini API", "LangChain", "OpenAI"] },
   { label: "Languages", items: ["JavaScript", "TypeScript", "Python", "HTML", "CSS"] },
-  { label: "Frameworks & Libraries", items: ["React", "Next.js", "Bootstrap", "Tailwind CSS"] },
+  { label: "Frameworks & Libraries", items: ["React", "Next.js", "Vite", "Bootstrap", "Tailwind CSS"] },
   { label: "Backend (in progress)", items: ["Node.js", "FastAPI", "PostgreSQL", "Docker"] },
-  { label: "Cloud & DevOps", items: ["Git & GitHub", "Vercel", "Render", "Postman"] },
-  { label: "Domain & Craft", items: ["UI/UX", "Accessibility (ARIA)", "PWA", "Data Structures"] },
+  { label: "Cloud & DevOps", items: ["Git & GitHub", "Vercel", "Render", "Postman", "CLI"] },
+  { label: "Domain & Craft", items: ["UI/UX", "Accessibility (ARIA)", "SEO", "PWA", "Data Structures & Algorithms"] },
+  { label: "Leadership & Community", items: ["Project Management", "Supply Chain Management", "Community Outreach", "Volunteer Management"] },
   { label: "Speaks", items: profile.languages },
 ];
 
@@ -281,10 +291,34 @@ export const log: LogEntry[] = [
     detail: "Started contributing to open source under GSSoC '26 — now past 80 merged pull requests.",
   },
   {
-    tag: "v2026.04",
+    tag: "v2026.04.2",
     date: "April 2026",
     title: "5th place — AAYAM CP Individuals",
     detail: "Placed 5th in a competitive-programming contest on algorithms and problem solving, hosted by Newton School of Technology.",
+  },
+  {
+    tag: "v2026.04.1",
+    date: "April 2026",
+    title: "NextTuring: Blindfolded — Aayam",
+    detail: "Competed in the Blindfolded coding challenge at Aayam Tech Fest, Newton School of Technology.",
+  },
+  {
+    tag: "v2026.03.2",
+    date: "March 2026",
+    title: "Turing Cup 2K26 — National CP Contest",
+    detail: "Participated in the Turing Cup 2K26 national-level coding contest hosted by VNR Vignana Jyothi Institute of Engineering & Technology.",
+  },
+  {
+    tag: "v2026.03.1",
+    date: "March 2026",
+    title: "NextTuring CP Individuals — Online Qualifiers",
+    detail: "Qualified through online rounds of the NextTuring CP Individuals contest, organized by Newton School of Technology.",
+  },
+  {
+    tag: "v2026.03",
+    date: "March 2026",
+    title: "Shipped ProductBrowser",
+    detail: "A high-performance catalog API for a CodeVector internship — sub-50ms responses across 200K products with cursor-based pagination.",
   },
   {
     tag: "v2026.02.2",
@@ -311,10 +345,28 @@ export const log: LogEntry[] = [
     detail: "A responsive real estate platform with EMI calculator and SEO-first architecture.",
   },
   {
+    tag: "v2025.12.2",
+    date: "December 2025",
+    title: "Joined ECWoC 2025",
+    detail: "Started contributing to open source under Elite Coders Winter of Code, among 5,000+ participants globally.",
+  },
+  {
+    tag: "v2025.10",
+    date: "October 2025",
+    title: "AlgoStrike — Yugantar '25",
+    detail: "Competed in the AlgoStrike CP team contest at Yugantar '25, organized by Scalar School of Technology, Bengaluru.",
+  },
+  {
     tag: "v2025.09",
     date: "September 2025",
     title: "Smart India Hackathon 2025",
     detail: "Participated at national level, focused on innovation and real-world problem solving.",
+  },
+  {
+    tag: "v2025.08",
+    date: "August 2025",
+    title: "Participated in ICPC 2025",
+    detail: "Competed in the International Collegiate Programming Contest — sharpening algorithmic thinking and team-based problem solving.",
   },
   {
     tag: "v2025.06",
