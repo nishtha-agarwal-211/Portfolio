@@ -3,7 +3,7 @@ export const profile = {
   role: "Frontend Developer",
   tagline: "React & JavaScript · 80+ merged open-source PRs · building accessible web apps",
   location: "Bengaluru, Karnataka, India",
-  email: "nishthaagarwal211@gmail.com",
+  email: "nishthaagarwal937@gmail.com",
   phone: "+91 7284853923",
   summary:
     "Frontend developer and CSE student at Newton School of Technology, focused on building accessible, high-performance web applications and AI-powered tools. 80+ merged pull requests across GirlScript Summer of Code '26 repositories — from accessible UI components to critical bug fixes — alongside independent projects spanning healthcare, civic tech, and backend systems. Currently seeking frontend development internships where I can contribute to impactful products.",
@@ -11,10 +11,10 @@ export const profile = {
   languages: ["English", "Hindi", "Gujarati", "Marwari"],
   social: {
     github: "https://github.com/nishtha-agarwal-211",
-    linkedin: "https://www.linkedin.com/in/nishthaagarwal211",
-    leetcode: "https://leetcode.com",
-    codeforces: "https://codeforces.com",
-    codechef: "https://codechef.com",
+    linkedin: "https://www.linkedin.com/in/nishtha-agarwal211/",
+    leetcode: "https://leetcode.com/u/nishtha_agarwal_211/",
+    codeforces: "https://codeforces.com/profile/nishtha.agarwal.211",
+    codechef: "https://www.codechef.com/users/nishtha_211",
   },
 };
 
@@ -37,6 +37,12 @@ export const education = [
     school: "B.R. International School, Valsad, Gujarat",
     period: "2024 — 2025",
     detail: "90.6%",
+  },
+  {
+    degree: "High School (Class X)",
+    school: "Shree Krishna International School, Vapi, Gujarat",
+    period: "2022 — 2023",
+    detail: "92.4%",
   },
 ];
 
