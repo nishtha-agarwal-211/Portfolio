@@ -45,7 +45,9 @@ export default function Hero() {
           className="font-display text-4xl font-medium leading-[1.08] text-ink sm:text-6xl md:text-7xl"
         >
           {profile.name.split(" ")[0]}{" "}
-          <span className="text-gradient">{profile.name.split(" ")[1]}</span>
+          <span className="text-gradient glitch-text" data-text={profile.name.split(" ")[1]}>
+            {profile.name.split(" ")[1]}
+          </span>
         </motion.h1>
 
         <motion.p

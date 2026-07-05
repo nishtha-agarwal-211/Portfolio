@@ -14,15 +14,30 @@ const SOCIALS = [
   { label: "LeetCode", href: profile.social.leetcode, icon: Code2 },
 ];
 
-type Status = "idle" | "sent";
+type Status = "idle" | "sending" | "sent" | "error";
 
 export default function Contact() {
   const [status, setStatus] = useState<Status>("idle");
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    // Wire this up to an API route (e.g. Resend, Formspree) before going live.
-    setStatus("sent");
+    setStatus("sending");
+    const form = e.currentTarget;
+    const data = {
+      name: (form.elements.namedItem("name") as HTMLInputElement).value,
+      email: (form.elements.namedItem("email") as HTMLInputElement).value,
+      message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
+    };
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      setStatus(res.ok ? "sent" : "error");
+    } catch {
+      setStatus("error");
+    }
   }
 
   return (
@@ -54,6 +69,12 @@ export default function Contact() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
+                  {status === "error" && (
+                    <p className="rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-400">
+                      Something went wrong sending that — try again, or email me directly at{" "}
+                      <a href={`mailto:${profile.email}`} className="underline">{profile.email}</a>.
+                    </p>
+                  )}
                   <div className="grid gap-5 sm:grid-cols-2">
                     <div>
                       <label htmlFor="name" className="mb-2 block font-mono text-xs text-mist">
@@ -97,9 +118,10 @@ export default function Contact() {
                   </div>
                   <button
                     type="submit"
-                    className="inline-flex items-center gap-2 rounded-full bg-signal-gradient px-6 py-3 text-sm font-semibold text-void shadow-glow transition-transform hover:-translate-y-0.5"
+                    disabled={status === "sending"}
+                    className="inline-flex items-center gap-2 rounded-full bg-signal px-6 py-3 font-semibold text-black transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:hover:scale-100"
                   >
-                    Send message
+                    {status === "sending" ? "Sending..." : "Send message"}
                     <Send className="h-4 w-4" />
                   </button>
                 </form>

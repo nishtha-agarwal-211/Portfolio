@@ -18,13 +18,13 @@ export default function HeroScene() {
     return (
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-signal-gradient-soft opacity-60"
+        className="absolute inset-0 bg-signal-gradient-soft opacity-60 pointer-events-none"
       />
     );
   }
 
   return (
-    <div className="absolute inset-0" aria-hidden="true">
+    <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
       <NetworkGraph />
     </div>
   );

@@ -269,19 +269,19 @@ export const log: LogEntry[] = [
   {
     tag: "v2026.06",
     date: "June 2026",
-    title: "Shipped Andaz",
+    title: "Built Andaz",
     detail: "A server-streamed student learning dashboard built on Next.js 16 Server Components with zero layout shift.",
   },
   {
     tag: "v2026.05.3",
     date: "May 2026",
-    title: "Shipped StepThrough",
+    title: "Built StepThrough",
     detail: "A civic-tech platform helping people navigate government schemes and real-world opportunities.",
   },
   {
     tag: "v2026.05.2",
     date: "May 2026",
-    title: "Shipped Memoria",
+    title: "Built Memoria",
     detail: "A persistent, explainable memory orchestration layer for LLM agents, with hybrid vector + keyword search.",
   },
   {
@@ -317,31 +317,31 @@ export const log: LogEntry[] = [
   {
     tag: "v2026.03",
     date: "March 2026",
-    title: "Shipped ProductBrowser",
+    title: "Built ProductBrowser",
     detail: "A high-performance catalog API for a CodeVector internship — sub-50ms responses across 200K products with cursor-based pagination.",
   },
   {
     tag: "v2026.02.2",
     date: "February 2026",
-    title: "Shipped Beyond the Reality",
+    title: "Built Beyond the Reality",
     detail: "3rd place & Best Ideation at Campfire Bengaluru Hackathon (Hack Club) for an immersive psychological thriller game.",
   },
   {
     tag: "v2026.02.1",
     date: "February 2026",
-    title: "Shipped SmartMedicines",
+    title: "Built SmartMedicines",
     detail: "An AI healthcare companion with prescription scanning and drug-interaction detection, built on the Gemini API.",
   },
   {
     tag: "v2025.12",
     date: "December 2025",
-    title: "Shipped System of Support",
+    title: "Built System of Support",
     detail: "An offline-first PWA covering emergency resources across 7 Indian cities.",
   },
   {
     tag: "v2025.11",
     date: "November 2025",
-    title: "Shipped SmartAcres",
+    title: "Built SmartAcres",
     detail: "A responsive real estate platform with EMI calculator and SEO-first architecture.",
   },
   {

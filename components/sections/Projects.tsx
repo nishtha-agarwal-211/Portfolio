@@ -13,7 +13,7 @@ export default function Projects() {
         <SectionHeading
           index="03"
           eyebrow="Selected work"
-          title="Shipped, not just scoped."
+          title="Built, not just scoped."
           description="A mix of an internship engineering assignment and independent builds — spanning backend performance, AI product design, civic tech, and offline-first systems."
         />
 

@@ -5,6 +5,8 @@ import CursorGlow from "@/components/CursorGlow";
 import Preloader from "@/components/Preloader";
 import ScrollProgress from "@/components/ScrollProgress";
 import BackToTop from "@/components/BackToTop";
+import ScrollField from "@/components/three/ScrollField";
+import Terminal from "@/components/Terminal";
 import { profile } from "@/lib/data";
 
 const siteUrl = "https://nishtha-agarwal.vercel.app";
@@ -94,10 +96,12 @@ export default function RootLayout({
         <Preloader />
         <div className="ambient-glow" aria-hidden="true" />
         <div className="noise" aria-hidden="true" />
+        <ScrollField />
         <CursorGlow />
         <ScrollProgress />
         <SmoothScroll>{children}</SmoothScroll>
         <BackToTop />
+        <Terminal />
       </body>
     </html>
   );
