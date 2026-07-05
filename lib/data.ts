@@ -22,7 +22,7 @@ export const stats = [
   { value: "80+", label: "PRs merged in open source" },
   { value: "9.24", label: "CGPA / 10.0" },
   { value: "2,500", label: "meals served weekly via NGO" },
-  { value: "3", label: "hackathon podiums" },
+  { value: "200+", label: "CP problems solved" },
 ];
 
 export const education = [
@@ -147,9 +147,9 @@ export const projects: Project[] = [
     period: "February 2026",
     tagline: "An AI-powered healthcare companion",
     description:
-      "A medication-management app that scans prescriptions, explains them, and catches dangerous drug interactions before they happen.",
+      "A medication-management app that scans prescriptions, explains them, and catches dangerous drug interactions before they happen. Built for the Google Gemini Hackathon.",
     bullets: [
-      "Built prescription scanning, conversational medicine guidance, and drug interaction detection with the Gemini API.",
+      "Built at the Google Gemini Hackathon: prescription scanning, conversational medicine guidance, and drug interaction detection with the Gemini API.",
       "Added medication reminders, browser notifications, and one-tap emergency card generation.",
       "Layered in voice-assisted interaction and an accessibility-focused, fully responsive UI.",
     ],
@@ -165,9 +165,9 @@ export const projects: Project[] = [
     period: "December 2025",
     tagline: "An offline-first PWA for emergency access",
     description:
-      "A privacy-first progressive web app surfacing emergency, shelter, healthcare, and community resources across 7 Indian cities — designed to work with zero connectivity.",
+      "A privacy-first progressive web app surfacing emergency, shelter, healthcare, and community resources across 7 Indian cities — designed to work with zero connectivity. Built at the DevForge Hackathon.",
     bullets: [
-      "Built offline-first with service workers and localStorage, functioning with zero network connectivity.",
+      "Built at DevForge Hackathon: offline-first architecture with service workers and localStorage, functioning with zero network connectivity.",
       "Covered emergency, shelter, healthcare, and community resources across 7 Indian cities.",
       "Added multilingual support, smart search filters, full keyboard navigation, and a dedicated emergency mode.",
     ],
@@ -200,9 +200,9 @@ export const projects: Project[] = [
     period: "May 2026",
     tagline: "Persistent, explainable memory for LLM agents",
     description:
-      "An agent-native memory orchestration layer that turns conversation and execution history into structured, persistent state — so LLM agents remember without retraining.",
+      "An agent-native memory orchestration layer that turns conversation and execution history into structured, persistent state — so LLM agents remember without retraining. Built at Ascent Hackathon, hosted by Scalar School of Technology, Bengaluru.",
     bullets: [
-      "Built hybrid search combining vector similarity and keyword matching over a Qdrant vector store.",
+      "Built at Ascent Hackathon (Scalar School of Technology, Bengaluru): hybrid search combining vector similarity and keyword matching over a Qdrant vector store.",
       "Designed multi-factor adaptive ranking and conflict resolution to keep memory consistent across sessions.",
       "Shipped a FastAPI backend with a React + TypeScript frontend, styled with Tailwind CSS.",
     ],
@@ -282,7 +282,7 @@ export const log: LogEntry[] = [
     tag: "v2026.05.2",
     date: "May 2026",
     title: "Built Memoria",
-    detail: "A persistent, explainable memory orchestration layer for LLM agents, with hybrid vector + keyword search.",
+    detail: "A persistent, explainable memory orchestration layer for LLM agents, with hybrid vector + keyword search — built at Ascent Hackathon, Scalar School of Technology, Bengaluru.",
   },
   {
     tag: "v2026.05.1",
@@ -330,13 +330,13 @@ export const log: LogEntry[] = [
     tag: "v2026.02.1",
     date: "February 2026",
     title: "Built SmartMedicines",
-    detail: "An AI healthcare companion with prescription scanning and drug-interaction detection, built on the Gemini API.",
+    detail: "An AI healthcare companion with prescription scanning and drug-interaction detection, built on the Gemini API at the Google Gemini Hackathon.",
   },
   {
     tag: "v2025.12",
     date: "December 2025",
     title: "Built System of Support",
-    detail: "An offline-first PWA covering emergency resources across 7 Indian cities.",
+    detail: "An offline-first PWA covering emergency resources across 7 Indian cities — built at the DevForge Hackathon.",
   },
   {
     tag: "v2025.11",
