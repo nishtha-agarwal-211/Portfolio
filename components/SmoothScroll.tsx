@@ -17,9 +17,11 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
     if (prefersReduced) return;
 
     const lenis = new Lenis({
-      duration: 1.1,
-      easing: (t) => 1 - Math.pow(1 - t, 3),
+      duration: 1.0,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
+      wheelMultiplier: 1.0,
+      touchMultiplier: 1.5,
     });
     lenisRef.current = lenis;
     window.__lenis = lenis;
@@ -30,17 +32,24 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
     }
     const id = requestAnimationFrame(raf);
 
-    // Route in-page anchor clicks through Lenis so nav/hero links scroll smoothly
+    // Route in-page anchor clicks through Lenis so they scroll smoothly
+    // Only intercept pure #hash links, not route-based navigation
     function onClick(e: MouseEvent) {
       const anchor = (e.target as HTMLElement)?.closest("a[href^='#']") as HTMLAnchorElement | null;
       if (!anchor) return;
-      const id = anchor.getAttribute("href");
-      if (!id || id === "#") return;
-      const target = document.querySelector(id);
+      const href = anchor.getAttribute("href");
+      if (!href || href === "#") return;
+      // Only intercept if element exists on the current page
+      let target: Element | null = null;
+      try {
+        target = document.querySelector(href);
+      } catch {
+        return;
+      }
       if (!target) return;
       e.preventDefault();
       lenis.scrollTo(target as HTMLElement, { offset: -12, duration: 1.2 });
-      history.pushState(null, "", id);
+      history.pushState(null, "", href);
     }
     document.addEventListener("click", onClick);
 

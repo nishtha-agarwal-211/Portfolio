@@ -5,6 +5,17 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import GlassCard from "@/components/ui/GlassCard";
 import { skillGroups } from "@/lib/data";
 
+const GROUP_ACCENTS = [
+  "from-signal to-purple-400",
+  "from-pulse to-emerald-400",
+  "from-aurora to-blue-400",
+  "from-amber to-orange-400",
+  "from-pink-500 to-rose-400",
+  "from-signal to-pulse",
+  "from-amber to-pulse",
+  "from-aurora to-signal",
+];
+
 export default function Skills() {
   return (
     <section id="skills" className="relative px-6 py-28 sm:px-10">
@@ -20,23 +31,40 @@ export default function Skills() {
           {skillGroups.map((group, i) => (
             <motion.div
               key={group.label}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 24, scale: 0.96 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.5, delay: (i % 3) * 0.08 }}
+              transition={{
+                duration: 0.5,
+                delay: (i % 3) * 0.08,
+                ease: [0.23, 1, 0.32, 1],
+              }}
             >
-              <GlassCard className="h-full p-6">
-                <p className="mb-4 font-mono text-xs uppercase tracking-wider text-signal">
+              <GlassCard className="group relative h-full overflow-hidden p-6">
+                {/* Accent bar */}
+                <div
+                  className={`absolute inset-x-0 top-0 h-px bg-gradient-to-r ${GROUP_ACCENTS[i % GROUP_ACCENTS.length]} opacity-50 transition-opacity duration-300 group-hover:opacity-100`}
+                />
+
+                <p className="mb-5 font-mono text-xs uppercase tracking-wider text-signal">
                   {group.label}
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  {group.items.map((item) => (
-                    <span
+                  {group.items.map((item, j) => (
+                    <motion.span
                       key={item}
-                      className="rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 text-sm text-ink transition-colors hover:border-pulse/40 hover:text-pulse"
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true, margin: "-40px" }}
+                      transition={{
+                        duration: 0.3,
+                        delay: 0.15 + j * 0.03,
+                        ease: "easeOut",
+                      }}
+                      className="rounded-lg border border-white/[0.08] bg-white/[0.04] px-3 py-1.5 text-sm text-ink transition-all duration-300 hover:border-signal/40 hover:text-pulse hover:shadow-[0_0_16px_rgba(124,58,237,0.12)] hover:scale-105"
                     >
                       {item}
-                    </span>
+                    </motion.span>
                   ))}
                 </div>
               </GlassCard>

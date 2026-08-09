@@ -1,11 +1,7 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/sections/Hero";
-import About from "@/components/sections/About";
-import Experience from "@/components/sections/Experience";
-import Projects from "@/components/sections/Projects";
-import Skills from "@/components/sections/Skills";
-import Log from "@/components/sections/Log";
-import Contact from "@/components/sections/Contact";
+import MarqueeTicker from "@/components/MarqueeTicker";
+import PageLinks from "@/components/sections/PageLinks";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -13,12 +9,8 @@ export default function Home() {
     <main className="relative">
       <Nav />
       <Hero />
-      <About />
-      <Experience />
-      <Projects />
-      <Skills />
-      <Log />
-      <Contact />
+      <MarqueeTicker />
+      <PageLinks />
       <Footer />
     </main>
   );

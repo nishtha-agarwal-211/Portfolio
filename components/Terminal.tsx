@@ -209,7 +209,7 @@ export default function Terminal() {
       <button
         onClick={() => setOpen((v) => !v)}
         aria-label={open ? "Close terminal" : "Open terminal"}
-        className="glass fixed bottom-6 left-6 z-40 flex h-11 w-11 items-center justify-center rounded-full transition-all duration-300 hover:shadow-glow-pulse hover:-translate-y-1"
+        className="glass fixed bottom-6 left-6 z-40 flex h-11 w-11 items-center justify-center rounded-full transition-all duration-300 hover:shadow-glow hover:-translate-y-1 cursor-pointer"
       >
         {open ? (
           <X className="h-4 w-4 text-pulse" />
@@ -231,8 +231,8 @@ export default function Terminal() {
           className="glass fixed bottom-20 left-6 z-40 flex h-[420px] w-[92vw] max-w-md flex-col overflow-hidden rounded-2xl"
         >
           <div className="flex items-center gap-2 border-b border-white/10 px-4 py-2.5 font-mono text-xs text-mist">
-            <span className="h-2.5 w-2.5 rounded-full bg-pulse/70" />
-            <span className="h-2.5 w-2.5 rounded-full bg-signal/70" />
+            <span className="h-2.5 w-2.5 rounded-full bg-pulse" />
+            <span className="h-2.5 w-2.5 rounded-full bg-signal" />
             <span className="ml-2">~/console</span>
           </div>
 

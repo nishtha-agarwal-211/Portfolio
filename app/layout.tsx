@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
-import CursorGlow from "@/components/CursorGlow";
+import MagneticCursor from "@/components/MagneticCursor";
 import Preloader from "@/components/Preloader";
 import ScrollProgress from "@/components/ScrollProgress";
 import BackToTop from "@/components/BackToTop";
 import ScrollField from "@/components/three/ScrollField";
 import Terminal from "@/components/Terminal";
+import ClickSpark from "@/components/ClickSpark";
+import TelemetryBar from "@/components/TelemetryBar";
+import ChatBot from "@/components/ChatBot";
 import { profile } from "@/lib/data";
 
 const siteUrl = "https://nishtha-agarwal.vercel.app";
@@ -79,30 +82,59 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
           rel="stylesheet"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                function isExtensionError(err, filename) {
+                  var str = String(filename || "") + " " + String(err && err.stack ? err.stack : err || "");
+                  return str.indexOf("chrome-extension:") !== -1 || str.indexOf("embed_script.js") !== -1;
+                }
+                window.addEventListener("error", function(e) {
+                  if (isExtensionError(e.error, e.filename)) {
+                    e.stopImmediatePropagation();
+                    e.preventDefault();
+                  }
+                }, true);
+                window.addEventListener("unhandledrejection", function(e) {
+                  if (isExtensionError(e.reason, "")) {
+                    e.stopImmediatePropagation();
+                    e.preventDefault();
+                  }
+                }, true);
+              })();
+            `,
+          }}
         />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="font-body bg-void text-ink antialiased">
+      <body className="font-body bg-void text-ink antialiased cursor-none md:cursor-none" suppressHydrationWarning>
         <Preloader />
+        <ClickSpark />
         <div className="ambient-glow" aria-hidden="true" />
         <div className="noise" aria-hidden="true" />
         <ScrollField />
-        <CursorGlow />
+        <MagneticCursor />
         <ScrollProgress />
+        <TelemetryBar />
         <SmoothScroll>{children}</SmoothScroll>
         <BackToTop />
         <Terminal />
+        <ChatBot />
       </body>
     </html>
   );
 }
+
+

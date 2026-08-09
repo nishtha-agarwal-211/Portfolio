@@ -1,13 +1,22 @@
 import { HTMLAttributes } from "react";
 
+type Props = HTMLAttributes<HTMLDivElement> & {
+  variant?: "default" | "glow";
+};
+
 export default function GlassCard({
   className = "",
+  variant = "default",
   children,
   ...props
-}: HTMLAttributes<HTMLDivElement>) {
+}: Props) {
   return (
     <div
-      className={`glass glow-border relative rounded-2xl transition-transform duration-300 ${className}`}
+      className={`bento-card ${
+        variant === "glow"
+          ? "shadow-bento-hover"
+          : "shadow-bento"
+      } ${className}`}
       {...props}
     >
       {children}
