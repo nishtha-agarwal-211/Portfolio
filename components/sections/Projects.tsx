@@ -25,6 +25,10 @@ export default function Projects() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
+              whileHover={{
+                y: -6,
+                transition: { type: "spring", stiffness: 300, damping: 20 },
+              }}
               transition={{
                 duration: 0.5,
                 delay: (i % 2) * 0.1,
@@ -94,6 +98,7 @@ export default function Projects() {
                             href={p.github}
                             target="_blank"
                             rel="noopener noreferrer"
+                            data-cursor-label="open"
                             className="inline-flex items-center gap-1.5 font-mono text-xs text-ink transition-all hover:text-pulse"
                           >
                             <Github className="h-3.5 w-3.5" /> Source
@@ -104,6 +109,7 @@ export default function Projects() {
                             href={p.demo}
                             target="_blank"
                             rel="noopener noreferrer"
+                            data-cursor-label="open"
                             className="inline-flex items-center gap-1.5 font-mono text-xs text-ink transition-all hover:text-pulse"
                           >
                             <ExternalLink className="h-3.5 w-3.5" /> Live Demo
@@ -113,6 +119,7 @@ export default function Projects() {
 
                       <a
                         href={`/projects/${p.slug}`}
+                        data-cursor-label="view"
                         className="inline-flex items-center gap-1 font-mono text-xs font-semibold text-signal hover:underline"
                       >
                         Read Case Study <ArrowUpRight className="h-3.5 w-3.5" />
@@ -129,6 +136,7 @@ export default function Projects() {
         <div className="mt-12 text-center">
           <a
             href="/projects"
+            data-cursor-label="explore"
             className="glass inline-flex items-center gap-2 rounded-full border border-white/10 px-7 py-3.5 font-mono text-xs font-semibold text-ink transition-all hover:border-signal/40 hover:text-pulse hover:shadow-glow"
           >
             Explore Full Projects Archive &amp; Tech Specs →

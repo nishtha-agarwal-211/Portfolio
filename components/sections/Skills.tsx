@@ -34,6 +34,10 @@ export default function Skills() {
               initial={{ opacity: 0, y: 24, scale: 0.96 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true, margin: "-60px" }}
+              whileHover={{
+                y: -4,
+                transition: { type: "spring", stiffness: 300, damping: 20 },
+              }}
               transition={{
                 duration: 0.5,
                 delay: (i % 3) * 0.08,
@@ -56,12 +60,16 @@ export default function Skills() {
                       initial={{ opacity: 0, scale: 0.8 }}
                       whileInView={{ opacity: 1, scale: 1 }}
                       viewport={{ once: true, margin: "-40px" }}
+                      whileHover={{
+                        scale: 1.08,
+                        transition: { type: "spring", stiffness: 400, damping: 15 },
+                      }}
                       transition={{
                         duration: 0.3,
                         delay: 0.15 + j * 0.03,
                         ease: "easeOut",
                       }}
-                      className="rounded-lg border border-white/[0.08] bg-white/[0.04] px-3 py-1.5 text-sm text-ink transition-all duration-300 hover:border-signal/40 hover:text-pulse hover:shadow-[0_0_16px_rgba(124,58,237,0.12)] hover:scale-105"
+                      className="rounded-lg border border-white/[0.08] bg-white/[0.04] px-3 py-1.5 text-sm text-ink transition-colors duration-300 hover:border-signal/40 hover:text-pulse hover:shadow-[0_0_16px_rgba(124,58,237,0.12)]"
                     >
                       {item}
                     </motion.span>

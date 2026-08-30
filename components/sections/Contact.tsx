@@ -133,6 +133,7 @@ export default function Contact() {
                   <button
                     type="submit"
                     disabled={status === "sending"}
+                    data-cursor-label="send"
                     className="shimmer inline-flex items-center gap-2 rounded-full bg-signal-gradient px-6 py-3 font-semibold text-void transition-all duration-300 hover:scale-105 hover:shadow-glow disabled:opacity-50 disabled:hover:scale-100 cursor-pointer"
                   >
                     {status === "sending" ? "Sending..." : "Send message"}
@@ -157,6 +158,7 @@ export default function Contact() {
                   href={s.href}
                   target={s.href.startsWith("http") ? "_blank" : undefined}
                   rel="noopener noreferrer"
+                  data-cursor-label="open"
                   initial={{ opacity: 0, x: 20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, margin: "-40px" }}

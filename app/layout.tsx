@@ -10,6 +10,7 @@ import Terminal from "@/components/Terminal";
 import ClickSpark from "@/components/ClickSpark";
 import TelemetryBar from "@/components/TelemetryBar";
 import ChatBot from "@/components/ChatBot";
+import DepthGlyphs from "@/components/DepthGlyphs";
 import { profile } from "@/lib/data";
 
 const siteUrl = "https://nishtha-agarwal.vercel.app";
@@ -125,6 +126,7 @@ export default function RootLayout({
         <div className="ambient-glow" aria-hidden="true" />
         <div className="noise" aria-hidden="true" />
         <ScrollField />
+        <DepthGlyphs />
         <MagneticCursor />
         <ScrollProgress />
         <TelemetryBar />

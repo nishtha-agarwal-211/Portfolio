@@ -3,7 +3,11 @@
 import { motion } from "framer-motion";
 import SectionHeading from "@/components/ui/SectionHeading";
 import GlassCard from "@/components/ui/GlassCard";
+import TerminalNote from "@/components/ui/TerminalNote";
 import { experience, extras } from "@/lib/data";
+
+const EXTRAS_ROTATIONS = [-1.5, 1, -0.8];
+const EXTRAS_ACCENTS: ("signal" | "pulse" | "aurora")[] = ["signal", "pulse", "aurora"];
 
 export default function Experience() {
   return (
@@ -83,23 +87,19 @@ export default function Experience() {
           </div>
         </div>
 
-        {/* Extras as scrolling marquee */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-40px" }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="mt-10 flex flex-wrap gap-3 font-mono text-xs text-mist"
-        >
-          {extras.map((e) => (
-            <span
+        {/* Extras as TerminalNote cards */}
+        <div className="mt-12 grid gap-4 sm:grid-cols-3">
+          {extras.map((e, i) => (
+            <TerminalNote
               key={e}
-              className="rounded-full border border-white/[0.08] bg-white/[0.03] px-4 py-2 transition-all duration-300 hover:border-signal/30 hover:text-ink"
+              tag="# extra"
+              rotation={EXTRAS_ROTATIONS[i % EXTRAS_ROTATIONS.length]}
+              accent={EXTRAS_ACCENTS[i % EXTRAS_ACCENTS.length]}
             >
-              {e}
-            </span>
+              <p className="text-sm leading-relaxed text-mist">{e}</p>
+            </TerminalNote>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

@@ -114,15 +114,15 @@ export default function Hero() {
 
         {/* CTA Buttons */}
         <motion.div variants={item} className="mt-9 flex flex-wrap items-center gap-4">
-          <GradientButton href="/projects">
+          <GradientButton href="/projects" data-cursor-label="explore">
             Explore Selected Work
             <ArrowDown className="h-4 w-4" />
           </GradientButton>
-          <GradientButton href={profile.resumeFile} variant="ghost" download>
+          <GradientButton href={profile.resumeFile} variant="ghost" download data-cursor-label="view">
             <Download className="h-4 w-4" />
             Resume
           </GradientButton>
-          <GradientButton href={profile.social.github} variant="ghost" target="_blank" rel="noopener noreferrer">
+          <GradientButton href={profile.social.github} variant="ghost" target="_blank" rel="noopener noreferrer" data-cursor-label="open">
             <Github className="h-4 w-4" />
             GitHub
           </GradientButton>
