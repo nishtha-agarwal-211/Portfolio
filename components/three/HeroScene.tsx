@@ -3,7 +3,7 @@
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 
-const GradientOrb = dynamic(() => import("./GradientOrb"), { ssr: false });
+const NetworkGraph = dynamic(() => import("./NetworkGraph"), { ssr: false });
 
 export default function HeroScene() {
   const [enabled, setEnabled] = useState(false);
@@ -25,7 +25,7 @@ export default function HeroScene() {
 
   return (
     <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-      <GradientOrb />
+      <NetworkGraph />
     </div>
   );
 }

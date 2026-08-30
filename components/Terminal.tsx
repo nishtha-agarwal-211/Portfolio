@@ -2,9 +2,23 @@
 
 import { useState, useRef, useEffect, useCallback } from "react";
 import { TerminalSquare, X } from "lucide-react";
-import { profile, projects } from "@/lib/data";
+import { profile, projects, stats, faqs } from "@/lib/data";
 
 type Line = { type: "input" | "output" | "error"; text: string };
+
+const FAQ_KEYS: Record<string, number> = {
+  skills: 0,
+  internships: 1,
+  intern: 1,
+  opensource: 2,
+  "open-source": 2,
+  prs: 2,
+  backend: 3,
+  performance: 3,
+  community: 4,
+  ngo: 4,
+  leadership: 4,
+};
 
 const HELP_TEXT = [
   "available commands:",
@@ -12,6 +26,9 @@ const HELP_TEXT = [
   "  projects          list all projects",
   "  open <slug>       open a project's live demo",
   "  code <slug>       open a project's github repo",
+  "  stats             show headline stats",
+  "  faq               list faq topics",
+  "  faq <topic>       answer a specific question",
   "  resume            open resume pdf",
   "  ping <host>       check if a host is reachable (flavor)",
   "  traceroute        trace the route to nishtha.dev (flavor)",
@@ -90,6 +107,43 @@ export default function Terminal() {
           { type: "output", text: `${profile.name} — ${profile.role}` },
           { type: "output", text: profile.summary },
         ]);
+        break;
+      }
+      case "stats": {
+        push([{ type: "output", text: "  ─── headline stats ───" }]);
+        push(
+          stats.map((s) => ({
+            type: "output" as const,
+            text: `  ${s.value.padEnd(12)} ${s.label}`,
+          }))
+        );
+        break;
+      }
+      case "faq": {
+        if (!arg) {
+          push([
+            { type: "output", text: "available topics:" },
+            { type: "output", text: "  skills        technical skills & stack" },
+            { type: "output", text: "  internships   availability & interests" },
+            { type: "output", text: "  opensource    open-source contributions" },
+            { type: "output", text: "  backend      high-load backend experience" },
+            { type: "output", text: "  community    leadership & NGO work" },
+            { type: "output", text: "" },
+            { type: "output", text: "usage: faq <topic>" },
+          ]);
+        } else {
+          const key = arg.toLowerCase().replace(/\s+/g, "");
+          const idx = FAQ_KEYS[key];
+          if (idx !== undefined && faqs[idx]) {
+            push([
+              { type: "output", text: `Q: ${faqs[idx].q}` },
+              { type: "output", text: "" },
+              { type: "output", text: faqs[idx].a },
+            ]);
+          } else {
+            push([{ type: "error", text: `unknown topic '${arg}'. type 'faq' for available topics.` }]);
+          }
+        }
         break;
       }
       case "projects": {

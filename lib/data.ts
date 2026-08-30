@@ -1,12 +1,12 @@
 export const profile = {
   name: "Nishtha Agarwal",
   role: "Frontend Developer",
-  tagline: "React & JavaScript · 120+ Open Source PRs Merged · ICPC Online Prelims '25 · B.Tech CSE @ Newton School of Technology",
+  tagline: "React, Next.js & TypeScript · Top 1% (Rank #35) in GSSoC '26 · Codeforces Pupil · Algo Queen '26 Top 500 · B.Tech CSE @ Newton School of Technology",
   location: "Bengaluru, Karnataka, India",
   email: "nishthaagarwal937@gmail.com",
   phone: "+91 7284853923",
   summary:
-    "Frontend developer and CSE student at Newton School of Technology, focused on building accessible, high-performance web applications and AI-powered tools. 110+ merged pull requests across open-source repositories (GSSoC & Elite Coders) — from accessible UI components to critical bug fixes — alongside independent projects spanning healthcare, civic tech, and backend systems. Competed in ICPC Online Prelims '25 and Co-Founder of Shree Shyam Seva Samiti. Currently seeking frontend and full-stack software engineering internships.",
+    "Frontend developer and CSE student at Newton School of Technology (CGPA: 9.47), focused on building accessible, high-performance web applications, AI-powered tools, and offline-first systems. Ranked #35 globally out of 43,587 participants (Top 1% S-Tier) in GirlScript Summer of Code '26 with 144+ merged pull requests across open-source repositories. Active competitive programmer — Codeforces Pupil (1271 rating), 494th Global Rank in Algo Queen 2026 (The ICPC Girls' Programming Cup), 100-Day LeetCode Badge (32 Hard solved), and ICPC Online Prelims '25 participant. Co-Founder of Shree Shyam Seva Samiti. Currently seeking frontend and full-stack software engineering internships.",
   resumeFile: "/resume-nishtha-agarwal.pdf",
   languages: ["English", "Hindi", "Gujarati", "Marwari"],
   social: {
@@ -19,16 +19,18 @@ export const profile = {
 };
 
 export const stats = [
-  { value: "120+", label: "PRs merged in open source" },
-  { value: "9.47", label: "CGPA / 10.0" },
+  { value: "Top 1%", label: "Rank #35 / 43,587 in GSSoC '26" },
+  { value: "144+", label: "PRs merged in open source" },
+  { value: "Top 500", label: "Global rank (494th) Algo Queen '26" },
+  { value: "Pupil", label: "Codeforces rating (1271 max)" },
+  { value: "9.47", label: "CGPA / 10.0 @ Newton School" },
   { value: "2,500", label: "meals served weekly via NGO" },
-  { value: "200+", label: "CP problems solved" },
 ];
 
 export const education = [
   {
     degree: "B.Tech, Computer Science",
-    school: "Newton School of Technology (S-Vyasa)",
+    school: "Newton School of Technology x S-Vyasa University",
     period: "2025 — 2029",
     detail: "CGPA 9.47 / 10.0",
   },
@@ -80,13 +82,14 @@ export const experience: ExperienceEntry[] = [
   },
   {
     org: "GirlScript Summer of Code",
-    role: "Open Source Contributor",
+    role: "Open Source Contributor (S-Tier | Top 1%)",
     period: "May 2026 — Present",
     location: "Remote",
     bullets: [
-      "Merged 110+ pull requests across real-world open source projects under GSSoC '26, collaborating with maintainers globally.",
-      "Write clean, production-ready code across diverse tech stacks while actively participating in code reviews.",
-      "Identify issues and propose solutions under the guidance of experienced project mentors.",
+      "Secured Global Rank #35 out of 43,587 participants (Top 1% S-Tier) with 35,254 leaderboard points, a 13-week consecutive active streak, and 21 badges earned.",
+      "Merged 124+ pull requests across 9 open-source projects including BlockForge-AI, Checkora, commitpulse, and CampusConnect.",
+      "Engineered touch screen event handling, dynamic canvas scaling, keyboard shortcuts modal, 10-level undo history, and ARIA accessibility.",
+      "Collaborated actively with maintainers (Anuj Kulkarni, Dhairya Gothi) and received guidance from mentor Shubham Sagar on production-grade code reviews.",
     ],
   },
   {
@@ -95,7 +98,7 @@ export const experience: ExperienceEntry[] = [
     period: "December 2025 — February 2026",
     bullets: [
       "Contributed to open source projects as part of ECWoC 2025, among 5,000+ participants worldwide.",
-      "Demonstrated dedication to the developer community through consistent, quality contributions.",
+      "Demonstrated dedication to the developer community through consistent, quality code contributions and documentation improvements.",
     ],
   },
 ];
@@ -115,6 +118,43 @@ export type Project = {
 };
 
 export const projects: Project[] = [
+  {
+    slug: "globetrotter",
+    name: "GlobeTrotter",
+    period: "August 2026",
+    tagline: "Intelligent multi-city travel planning platform with live budget forecasting",
+    description:
+      "An intelligent, multi-city travel planning web platform built for the Odoo x LDCE Ahmedabad Hackathon 2026. Features 13 interactive views, multi-stop itinerary builder, live expense analytics with Chart.js, public link sharing, and trip duplication.",
+    bullets: [
+      "Built a zero-latency Single Page Application (SPA) architecture across 13 modular views with dark glassmorphism styling and custom CSS custom properties.",
+      "Engineered multi-city chronological stop management with 33+ seeded world cities and 51+ curated activity recommendations.",
+      "Integrated real-time Chart.js doughnut and bar charts for budget vs. actual cost tracking across 4 spending categories.",
+      "Implemented 1-click public itinerary sharing and trip cloning without authentication overhead.",
+    ],
+    stack: ["JavaScript", "Vite", "Chart.js", "Vanilla CSS", "localStorage"],
+    github: "https://github.com/nishtha-agarwal-211/GlobeTrotter",
+    demo: "https://globe-trotter-tau.vercel.app",
+    kind: "personal",
+    featured: true,
+  },
+  {
+    slug: "ngo-manager",
+    name: "NGO Manager",
+    period: "August 2026",
+    tagline: "All-in-one operating system & media archive for non-profit organizations",
+    description:
+      "A cross-platform mobile and web operating system built with Flutter and Supabase for Shree Shyam Seva Samiti. Manages weekly food drives (2,500 meals/week), donor ledgers, offline SQLite event caching, automated WhatsApp outreach, and media archives at $0 monthly infrastructure cost.",
+    bullets: [
+      "Architected cross-platform Flutter application with Material Design 3 and Riverpod state management for end-to-end NGO operations.",
+      "Integrated Supabase PostgreSQL cloud backend with single-trip RPC query optimization (`get_dashboard_stats`) and Drift SQLite offline synchronization.",
+      "Built client-side media compression pipeline supporting photo galleries and press coverage video archives.",
+      "Implemented automated WhatsApp and SMS communication utility for donor receipts, birthday wishes, and anniversary greetings.",
+    ],
+    stack: ["Flutter", "Dart", "Supabase", "PostgreSQL", "Drift (SQLite)", "Riverpod"],
+    github: "https://github.com/nishtha-agarwal-211/NGO",
+    kind: "personal",
+    featured: true,
+  },
   {
     slug: "spendwise",
     name: "SpendWise",
@@ -341,14 +381,14 @@ export const projects: Project[] = [
 ];
 
 export const skillGroups = [
-  { label: "AI / ML", items: ["RAG", "Gemini API", "LangChain", "OpenAI"] },
-  { label: "Languages", items: ["JavaScript", "TypeScript", "Python", "HTML", "CSS"] },
-  { label: "Frameworks & Libraries", items: ["React", "Next.js", "Vite", "Bootstrap", "Tailwind CSS"] },
-  { label: "Backend (in progress)", items: ["Node.js", "FastAPI", "PostgreSQL", "Docker"] },
-  { label: "Cloud & DevOps", items: ["Git & GitHub", "Vercel", "Render", "Postman", "CLI"] },
-  { label: "Domain & Craft", items: ["UI/UX", "Accessibility (ARIA)", "SEO", "PWA", "Data Structures & Algorithms"] },
-  { label: "Leadership & Community", items: ["Project Management", "Supply Chain Management", "Community Outreach", "Volunteer Management"] },
-  { label: "Speaks", items: profile.languages },
+  { label: "Frontend", items: ["React 19", "Next.js 16", "TypeScript", "JavaScript (ES6+)", "Tailwind CSS v4", "HTML5 & CSS3", "Framer Motion"] },
+  { label: "AI & ML", items: ["Gemini API", "RAG Pipelines", "Qdrant Vector DB", "LangChain", "OpenAI"] },
+  { label: "Mobile & Cross-Platform", items: ["Flutter", "Dart", "Riverpod", "Material Design 3", "Drift (SQLite)"] },
+  { label: "Backend & Systems", items: ["Node.js", "FastAPI", "PostgreSQL", "Supabase", "REST APIs", "Docker"] },
+  { label: "Cloud & DevOps", items: ["Git & GitHub", "Vercel", "Render", "Postman", "CLI Shell"] },
+  { label: "Domain & Engineering", items: ["UI/UX Architecture", "Accessibility (ARIA)", "Offline-First PWAs", "Keyset Pagination", "Data Structures & Algorithms"] },
+  { label: "Leadership & Impact", items: ["Operations Leadership", "Supply Chain Logistics", "Community Outreach", "Volunteer Management"] },
+  { label: "Languages", items: profile.languages },
 ];
 
 export type LogEntry = {
@@ -360,13 +400,49 @@ export type LogEntry = {
 
 export const log: LogEntry[] = [
   {
-    tag: "v2026.07",
-    date: "July 2026",
-    title: "Built SpendWise",
-    detail: "A client-side personal finance tracker with Chart.js analytics, monthly budget caps, spending limits, and 1-click CSV export.",
+    tag: "v2026.08.4",
+    date: "August 2026",
+    title: "Ranked 494th Globally in Algo Queen 2026",
+    detail: "Secured Top 500 spot (494th) in Round 1 of Algo Queen 2026: The ICPC Girls' Programming Cup out of thousands of global participants.",
   },
   {
-    tag: "v2026.06",
+    tag: "v2026.08.3",
+    date: "August 2026",
+    title: "Achieved Pupil on Codeforces",
+    detail: "Crossed into the green tier on Codeforces reaching a 1271 rating following Educational Codeforces Round (Div. 2).",
+  },
+  {
+    tag: "v2026.08.2",
+    date: "August 2026",
+    title: "Shipped NGO Manager",
+    detail: "Built a cross-platform operations OS with Flutter, Supabase, and Drift SQLite for Shree Shyam Seva Samiti to manage weekly food drives and donor ledgers.",
+  },
+  {
+    tag: "v2026.08.1",
+    date: "August 2026",
+    title: "Built GlobeTrotter — Odoo x LDCE Hackathon",
+    detail: "Developed an intelligent multi-city travel planning platform featuring 13 interactive views, dynamic Chart.js budget breakdowns, and 1-click public itinerary sharing.",
+  },
+  {
+    tag: "v2026.07.2",
+    date: "July 2026",
+    title: "GSSoC '26 S-Tier Finish (Global Rank #35)",
+    detail: "Ranked #35 globally out of 43,587 participants (Top 1% S-Tier) in GirlScript Summer of Code with 124 PRs merged across 9 repos and 35,254 points.",
+  },
+  {
+    tag: "v2026.07.1",
+    date: "July 2026",
+    title: "Unlocked 100-Day Badge on LeetCode",
+    detail: "160+ problems solved, 110 active days, 32 Hard problems cracked, and a max 48-day streak on LeetCode.",
+  },
+  {
+    tag: "v2026.06.2",
+    date: "June 2026",
+    title: "Industry Connect Day @ Procore Technologies",
+    detail: "Participated in Industry Connect Day at Procore Technologies, Bangalore — exploring large-scale systems engineering and product architecture.",
+  },
+  {
+    tag: "v2026.06.1",
     date: "June 2026",
     title: "Built EduPulse",
     detail: "A server-streamed student learning dashboard built on Next.js 16 Server Components with zero layout shift.",
@@ -393,7 +469,7 @@ export const log: LogEntry[] = [
     tag: "v2026.05.1",
     date: "May 2026",
     title: "Joined GirlScript Summer of Code",
-    detail: "Started contributing to open source under GSSoC '26 — now past 80 merged pull requests.",
+    detail: "Started contributing to open source under GSSoC '26 — reached 144+ merged pull requests across global projects.",
   },
   {
     tag: "v2026.04.3",
@@ -489,7 +565,7 @@ export const log: LogEntry[] = [
     tag: "v2025.06",
     date: "2025",
     title: "Started B.Tech in Computer Science",
-    detail: "Newton School of Technology (S-Vyasa) — currently at 9.24 CGPA.",
+    detail: "Newton School of Technology (S-Vyasa) — currently at 9.47 CGPA.",
   },
   {
     tag: "v2023.02",
@@ -500,7 +576,8 @@ export const log: LogEntry[] = [
 ];
 
 export const extras = [
-  "Participant, ICPC 2025",
+  "Participant, ICPC 2025 Online Prelims",
+  "Odoo x LDCE Ahmedabad Hackathon 2026 Participant (GlobeTrotter)",
   "Volunteered in SheBuilds and BugBash hackathons at Aayam Tech Fest — participant support, coordination, event execution",
   "9+ social service and donation drives as a Social Committee Member, with Robin Hood Army",
 ];
@@ -508,15 +585,15 @@ export const extras = [
 export const faqs = [
   {
     q: "What is your main area of focus and expertise?",
-    a: "I specialize in Frontend Development (React, Next.js, TypeScript, Tailwind CSS) with strong backend fundamentals (Node.js, PostgreSQL, FastAPI) and AI API integration (Gemini, LangChain). I have 120+ merged open-source PRs across GSSoC '26 and competitive hackathon wins.",
+    a: "I specialize in Frontend Development (React, Next.js, TypeScript, Tailwind CSS) with strong cross-platform & backend fundamentals (Flutter, Node.js, PostgreSQL, Supabase, FastAPI) and AI API integration (Gemini, LangChain). I have 144+ merged open-source PRs across GSSoC '26 and competitive hackathon awards.",
   },
   {
     q: "Are you currently available for frontend/full-stack internships?",
-    a: "Yes! I am actively looking for Frontend and Full-Stack Software Engineering internships for 2026/2027 where I can contribute to production-grade applications, accessible UI design systems, or AI-powered tools.",
+    a: "Yes! I am actively looking for Frontend and Full-Stack Software Engineering internships where I can contribute to production-grade applications, accessible UI design systems, or AI-powered tools.",
   },
   {
     q: "What open-source contributions have you completed?",
-    a: "I have merged 120+ pull requests under GirlScript Summer of Code (GSSoC '26) and Elite Coders Winter of Code (ECWoC). Contributions span accessible UI components, state management fixes, performance optimizations, and documentation.",
+    a: "I have merged 144+ pull requests across projects like BlockForge-AI, Checkora, commitpulse, CampusConnect, and more under GirlScript Summer of Code (GSSoC '26) and Elite Coders (ECSoC/ECWoC). Contributions span accessible UI components, touch gestures, canvas scaling, state management fixes, performance optimizations, and documentation.",
   },
   {
     q: "How do you handle high-load backend performance?",
@@ -524,7 +601,7 @@ export const faqs = [
   },
   {
     q: "What community leadership experience do you have?",
-    a: "I am the Co-Founder & Community Lead at Shree Shyam Seva Samiti (operating since Feb 2023). I run logistics for weekly food drives serving 2,000–2,500 meals every Wednesday, sponsor education for 30+ children annually, and organize healthcare camps.",
+    a: "I am the Co-Founder & Operations Lead at Shree Shyam Seva Samiti (operating since Feb 2023). I run logistics for weekly food drives serving 2,000–2,500 meals every Wednesday, sponsor education for 30+ children annually, organize healthcare camps, and developed the custom NGO Manager platform.",
   },
 ];
 
@@ -537,6 +614,36 @@ export type ProjectCaseStudy = {
 };
 
 export const caseStudies: Record<string, ProjectCaseStudy> = {
+  globetrotter: {
+    slug: "globetrotter",
+    architecture: "Vanilla ES6+ JavaScript + Vite + Chart.js + CSS Glassmorphism + Reactive LocalStore",
+    metrics: [
+      { label: "Views", value: "13 Unique Screens" },
+      { label: "Cities", value: "33+ World Cities" },
+      { label: "Analytics", value: "Real-Time Chart.js" },
+    ],
+    challenges: [
+      "Architecting a zero-latency Single Page Application across 13 modular views without frontend framework overhead",
+      "Building reactive budget forecasting with category breakdowns and live over-budget alerts",
+      "Implementing 1-click shareable public URLs and itinerary cloning mechanisms",
+    ],
+    chronicles: "Built for the Odoo x LDCE Ahmedabad Hackathon 2026. Features multi-stop journey planning, chronological stop managers, activity recommendation libraries, and financial intelligence visualizers.",
+  },
+  "ngo-manager": {
+    slug: "ngo-manager",
+    architecture: "Flutter 3.x + Dart 3.x + Supabase PostgreSQL + Drift SQLite + Riverpod",
+    metrics: [
+      { label: "Cost", value: "$0 Monthly Overhead" },
+      { label: "Impact", value: "2,500 Meals / Wk" },
+      { label: "Sync", value: "Offline SQLite Cache" },
+    ],
+    challenges: [
+      "Optimizing query roundtrips with a custom single Postgres RPC function (`get_dashboard_stats`)",
+      "Ensuring offline-first resilience for in-field event tracking using Drift SQLite and background work queues",
+      "Building client-side media compression to keep storage within free tier limits",
+    ],
+    chronicles: "Engineered as an all-in-one operating system for Shree Shyam Seva Samiti to manage volunteer directories, donor ledgers, weekly food distribution drives, and automated WhatsApp outreach.",
+  },
   spendwise: {
     slug: "spendwise",
     architecture: "Vanilla JavaScript (ES6+) + HTML5 + CSS3 Custom Properties + Chart.js + localStorage",
@@ -722,3 +829,189 @@ export const caseStudies: Record<string, ProjectCaseStudy> = {
     chronicles: "A clean, structured static admission portal created for Newton School of Technology, showcasing foundational web form design.",
   },
 };
+
+// ─── Achievements ───────────────────────────────────────────────────────────
+
+export type Achievement = {
+  title: string;
+  org: string;
+  date: string;
+  category: "hackathon" | "competitive-programming" | "academic" | "open-source";
+  result?: string;
+  detail: string;
+  link?: string;
+};
+
+export const achievements: Achievement[] = [
+  {
+    title: "Global Rank #35 (Top 1% S-Tier) — GSSoC '26",
+    org: "GirlScript Foundation",
+    date: "July 2026",
+    category: "open-source",
+    result: "Rank #35 / 43,587 (Top 1%)",
+    detail:
+      "Ranked #35 globally out of 43,587 participants in GirlScript Summer of Code '26 with 35,254 points, 124 PRs merged across 9 repos, 21 badges, and 13-week consecutive streak.",
+    link: "https://github.com/nishtha-agarwal-211",
+  },
+  {
+    title: "494th Global Rank — Algo Queen 2026",
+    org: "ICPC Foundation & Amrita Vishwa Vidyapeetham",
+    date: "August 2026",
+    category: "competitive-programming",
+    result: "Top 500 (494th Globally)",
+    detail:
+      "Secured 494th place in Round 1 of Algo Queen 2026: The ICPC Girls' Programming Cup out of thousands of participants worldwide.",
+  },
+  {
+    title: "Codeforces Pupil (Max Rating: 1271)",
+    org: "Codeforces",
+    date: "August 2026",
+    category: "competitive-programming",
+    result: "Pupil (Rating 1271)",
+    detail:
+      "Achieved Pupil rank in the green tier (+49 rating bump in Educational Codeforces Round Div. 2). Active competitive programmer targeting Specialist (1400+).",
+    link: "https://codeforces.com/profile/nishtha.agarwal.211",
+  },
+  {
+    title: "100-Day Consistency Badge — LeetCode",
+    org: "LeetCode",
+    date: "July 2026",
+    category: "competitive-programming",
+    result: "100-Day Badge & 32 Hard Solved",
+    detail:
+      "Unlocked 100-Day consistency badge with 160+ problems solved, 110 active days, 32 Hard problems cracked, and a max streak of 48 days.",
+    link: "https://leetcode.com/u/nishtha_agarwal_211/",
+  },
+  {
+    title: "Odoo x LDCE Ahmedabad Hackathon 2026",
+    org: "Odoo & LDCE Ahmedabad",
+    date: "August 2026",
+    category: "hackathon",
+    result: "Featured Hackathon Project",
+    detail:
+      "Built GlobeTrotter, an intelligent multi-city travel planning platform featuring 13 interactive views, dynamic expense analytics, and shareable public itineraries.",
+    link: "https://github.com/nishtha-agarwal-211/GlobeTrotter",
+  },
+  {
+    title: "3rd Place + Best Ideation — Campfire Bengaluru",
+    org: "Hack Club",
+    date: "February 2026",
+    category: "hackathon",
+    result: "3rd Place + Best Ideation",
+    detail:
+      "Built 'Beyond the Reality', an immersive psychological thriller game with reality-switch mechanics and puzzle-based progression.",
+    link: "https://github.com/nishtha-agarwal-211/Beyond-The-Reality",
+  },
+  {
+    title: "144+ Open Source PRs Merged",
+    org: "GSSoC '26 & Elite Coders",
+    date: "May 2026 — Present",
+    category: "open-source",
+    result: "144+ Merged PRs",
+    detail:
+      "Merged pull requests across real-world open-source repositories under GSSoC '26, ECSoC '26, and ECWoC including BlockForge-AI, Checkora, commitpulse, and CampusConnect.",
+    link: "https://github.com/nishtha-agarwal-211",
+  },
+  {
+    title: "ICPC 2025 — Online Prelims",
+    org: "ICPC Foundation",
+    date: "August 2025",
+    category: "competitive-programming",
+    detail:
+      "Competed in the International Collegiate Programming Contest online preliminary round.",
+  },
+  {
+    title: "5th Place — AAYAM CP Individuals",
+    org: "Newton School of Technology",
+    date: "April 2026",
+    category: "competitive-programming",
+    result: "5th Place",
+    detail:
+      "Competitive programming contest on algorithms and problem solving at Aayam Tech Fest.",
+  },
+  {
+    title: "CGPA 9.47 / 10.0",
+    org: "Newton School of Technology (S-Vyasa)",
+    date: "2025 — Present",
+    category: "academic",
+    result: "9.47 / 10.0",
+    detail: "B.Tech Computer Science — current CGPA.",
+  },
+  {
+    title: "Smart India Hackathon 2025",
+    org: "Government of India",
+    date: "September 2025",
+    category: "hackathon",
+    detail:
+      "Participated at national level, focused on innovation and real-world problem solving.",
+  },
+  {
+    title: "Turing Cup 2K26 — National CP Contest",
+    org: "VNR Vignana Jyothi Institute",
+    date: "March 2026",
+    category: "competitive-programming",
+    detail: "National-level coding contest.",
+  },
+  {
+    title: "AlgoStrike — Yugantar '25",
+    org: "Scalar School of Technology",
+    date: "October 2025",
+    category: "competitive-programming",
+    detail:
+      "Team CP contest at Yugantar '25, organized by Scalar School of Technology, Bengaluru.",
+  },
+];
+
+// ─── Campus Involvement / Volunteering ──────────────────────────────────────
+
+export type CampusInvolvement = {
+  event: string;
+  role: string;
+  org?: string;
+  date: string;
+  description: string;
+  link?: string;
+};
+
+export const campusInvolvement: CampusInvolvement[] = [
+  {
+    event: "Orientation 2026",
+    role: "Lead",
+    org: "Newton School of Technology",
+    date: "August 2026",
+    description:
+      "Led the 1-week freshman orientation program for the incoming junior batch — coordinating logistics, mentoring new students, running interactive icebreakers, and guiding campus acclimatization.",
+  },
+  {
+    event: "Industry Connect Day @ Procore Technologies",
+    role: "Student Delegate",
+    org: "Procore Technologies & NST",
+    date: "June 2026",
+    description:
+      "Explored real-world enterprise software architectures, system scaling, and product maintenance practices in Bangalore.",
+  },
+  {
+    event: "SheBuilds Hackathon",
+    role: "Volunteer",
+    org: "Aayam Tech Fest",
+    date: "2026",
+    description:
+      "Participant support, coordination, and event execution.",
+  },
+  {
+    event: "BugBash Hackathon",
+    role: "Volunteer",
+    org: "Aayam Tech Fest",
+    date: "2026",
+    description:
+      "Participant support, coordination, and event execution.",
+  },
+  {
+    event: "Robin Hood Army Donation Drives",
+    role: "Social Committee Member",
+    org: "Robin Hood Army",
+    date: "2025 — Present",
+    description:
+      "Participated in 9+ food distribution, community outreach, and donation drives across local areas.",
+  },
+];

@@ -9,13 +9,13 @@ const ACCENT_COLORS: Record<Accent, { border: string; text: string; bg: string; 
     border: "border-signal/30",
     text: "text-signal",
     bg: "bg-signal/10",
-    glow: "rgba(124,58,237,0.15)",
+    glow: "rgba(44,230,198,0.15)",
   },
   pulse: {
     border: "border-pulse/30",
     text: "text-pulse",
     bg: "bg-pulse/10",
-    glow: "rgba(6,214,160,0.15)",
+    glow: "rgba(110,91,255,0.15)",
   },
   aurora: {
     border: "border-aurora/30",

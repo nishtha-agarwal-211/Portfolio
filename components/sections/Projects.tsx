@@ -11,7 +11,7 @@ export default function Projects() {
     <section id="work" className="relative px-6 py-28 sm:px-10">
       <div className="mx-auto max-w-6xl">
         <SectionHeading
-          index="03"
+          index="~/work"
           eyebrow="Selected work"
           title="Built, not just scoped."
           description="A curated collection of production builds, internship engineering assignments, AI applications, and hackathon winners."

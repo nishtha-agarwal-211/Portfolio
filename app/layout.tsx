@@ -5,12 +5,9 @@ import MagneticCursor from "@/components/MagneticCursor";
 import Preloader from "@/components/Preloader";
 import ScrollProgress from "@/components/ScrollProgress";
 import BackToTop from "@/components/BackToTop";
-import ScrollField from "@/components/three/ScrollField";
 import Terminal from "@/components/Terminal";
-import ClickSpark from "@/components/ClickSpark";
-import TelemetryBar from "@/components/TelemetryBar";
-import ChatBot from "@/components/ChatBot";
 import DepthGlyphs from "@/components/DepthGlyphs";
+import CommandPalette from "@/components/CommandPalette";
 import { profile } from "@/lib/data";
 
 const siteUrl = "https://nishtha-agarwal.vercel.app";
@@ -22,7 +19,7 @@ export const metadata: Metadata = {
     template: "%s — Nishtha Agarwal",
   },
   description:
-    "Portfolio of Nishtha Agarwal — frontend developer with 80+ merged open-source PRs, building accessible web apps, AI-powered tools, and backend systems.",
+    "Portfolio of Nishtha Agarwal — frontend developer with 120+ merged open-source PRs, building accessible web apps, AI-powered tools, and backend systems.",
   keywords: [
     "Nishtha Agarwal",
     "Frontend Developer",
@@ -41,14 +38,14 @@ export const metadata: Metadata = {
     url: siteUrl,
     title: "Nishtha Agarwal — Frontend Developer",
     description:
-      "Frontend developer with 80+ merged open-source PRs, building accessible web apps, AI-powered tools, and backend systems.",
+      "Frontend developer with 120+ merged open-source PRs, building accessible web apps, AI-powered tools, and backend systems.",
     siteName: "Nishtha Agarwal",
   },
   twitter: {
     card: "summary_large_image",
     title: "Nishtha Agarwal — Frontend Developer",
     description:
-      "Frontend developer with 80+ merged open-source PRs, building accessible web apps, AI-powered tools, and backend systems.",
+      "Frontend developer with 120+ merged open-source PRs, building accessible web apps, AI-powered tools, and backend systems.",
   },
   robots: {
     index: true,
@@ -122,21 +119,16 @@ export default function RootLayout({
       </head>
       <body className="font-body bg-void text-ink antialiased cursor-none md:cursor-none" suppressHydrationWarning>
         <Preloader />
-        <ClickSpark />
         <div className="ambient-glow" aria-hidden="true" />
         <div className="noise" aria-hidden="true" />
-        <ScrollField />
         <DepthGlyphs />
         <MagneticCursor />
         <ScrollProgress />
-        <TelemetryBar />
         <SmoothScroll>{children}</SmoothScroll>
         <BackToTop />
         <Terminal />
-        <ChatBot />
+        <CommandPalette />
       </body>
     </html>
   );
 }
-
-

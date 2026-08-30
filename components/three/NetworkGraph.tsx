@@ -13,6 +13,11 @@ const PULSE_COUNT = 14;
 const REPEL_RADIUS = 1.6;
 const REPEL_STRENGTH = 0.035;
 
+// Repulsion is dampened when the cursor is in the left ~60% of the viewport
+// (where hero text content sits) to avoid distracting node movement under text.
+const TEXT_ZONE_X_NDC = 0.2; // NDC threshold: x < 0.2 means left 60% of screen
+const TEXT_ZONE_DAMPEN = 0.15; // 15% of normal repulsion strength in text zone
+
 function Graph() {
   const groupRef = useRef<THREE.Group>(null);
   const pointsRef = useRef<THREE.Points>(null);
@@ -71,6 +76,11 @@ function Graph() {
       0
     );
 
+    // Determine repulsion multiplier based on cursor position.
+    // When cursor is over the text zone (left ~60%), dampen heavily.
+    const cursorInTextZone = mouseNdc.current.x < TEXT_ZONE_X_NDC;
+    const repelMultiplier = cursorInTextZone ? TEXT_ZONE_DAMPEN : 1.0;
+
     const edges: [number, number][] = [];
 
     for (let i = 0; i < NODE_COUNT; i++) {
@@ -78,12 +88,12 @@ function Graph() {
       let y = posAttr.getY(i) + velocities[i].y;
       let z = posAttr.getZ(i) + velocities[i].z;
 
-      // cursor repulsion — nodes flee from the mouse
+      // cursor repulsion — nodes flee from the mouse (dampened in text zone)
       const dx = x - mouseWorld.current.x;
       const dy = y - mouseWorld.current.y;
       const dist = Math.sqrt(dx * dx + dy * dy);
       if (dist < REPEL_RADIUS && dist > 0.001) {
-        const force = (1 - dist / REPEL_RADIUS) * REPEL_STRENGTH;
+        const force = (1 - dist / REPEL_RADIUS) * REPEL_STRENGTH * repelMultiplier;
         x += (dx / dist) * force;
         y += (dy / dist) * force;
       }
@@ -161,24 +171,27 @@ function Graph() {
 
   return (
     <group ref={groupRef} scale={Math.min(viewport.width / 10, 1.1)}>
-      <Sparkles count={80} scale={[9, 6, 3]} size={1.4} speed={0.15} color="#6E5BFF" opacity={0.35} />
+      <Sparkles count={80} scale={[9, 6, 3]} size={1.4} speed={0.15} color="#6E5BFF" opacity={0.25} />
 
+      {/* Nodes — reduced opacity so text remains legible over the graph */}
       <points ref={pointsRef}>
         <bufferGeometry>
           <bufferAttribute attach="attributes-position" args={[positions, 3]} />
         </bufferGeometry>
-        <pointsMaterial color="#2ce6c6" size={0.075} transparent opacity={0.95} sizeAttenuation />
+        <pointsMaterial color="#2ce6c6" size={0.065} transparent opacity={0.7} sizeAttenuation />
       </points>
 
+      {/* Edges — thinner and more transparent for text contrast */}
       <lineSegments geometry={lineGeometry}>
-        <lineBasicMaterial color="#6e5bff" transparent opacity={0.3} />
+        <lineBasicMaterial color="#6e5bff" transparent opacity={0.18} />
       </lineSegments>
 
+      {/* Travelling pulses */}
       <points ref={pulsesRef}>
         <bufferGeometry>
           <bufferAttribute attach="attributes-position" args={[pulsePositions, 3]} />
         </bufferGeometry>
-        <pointsMaterial color="#ffffff" size={0.16} transparent opacity={0.95} sizeAttenuation />
+        <pointsMaterial color="#ffffff" size={0.12} transparent opacity={0.7} sizeAttenuation />
       </points>
     </group>
   );
@@ -195,8 +208,9 @@ export default function NetworkGraph() {
       <ambientLight intensity={0.6} />
       <Graph />
       <EffectComposer>
-        <Bloom intensity={0.9} luminanceThreshold={0.15} luminanceSmoothing={0.4} mipmapBlur />
-        <ChromaticAberration {...({ blendFunction: BlendFunction.NORMAL, offset: new THREE.Vector2(0.0006, 0.0006) } as any)} />
+        {/* Reduced bloom intensity to prevent text washout */}
+        <Bloom intensity={0.5} luminanceThreshold={0.25} luminanceSmoothing={0.5} mipmapBlur />
+        <ChromaticAberration {...({ blendFunction: BlendFunction.NORMAL, offset: new THREE.Vector2(0.0004, 0.0004) } as any)} />
       </EffectComposer>
     </Canvas>
   );

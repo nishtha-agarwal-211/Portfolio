@@ -6,12 +6,12 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 
 const LINKS = [
-  { index: "00", label: "Home", href: "/" },
-  { index: "01", label: "About", href: "/about" },
-  { index: "02", label: "Work", href: "/projects" },
-  { index: "03", label: "Skills", href: "/skills" },
-  { index: "04", label: "Log", href: "/log" },
-  { index: "05", label: "Contact", href: "/contact" },
+  { index: "~", label: "Home", href: "/" },
+  { index: "~/about", label: "About", href: "/about" },
+  { index: "~/work", label: "Work", href: "/projects" },
+  { index: "~/tools", label: "Skills", href: "/skills" },
+  { index: "~/log", label: "Log", href: "/log" },
+  { index: "~/contact", label: "Contact", href: "/contact" },
 ];
 
 export default function Nav() {

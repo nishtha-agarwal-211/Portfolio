@@ -45,7 +45,7 @@ export default function Contact() {
     <section id="contact" className="relative px-6 py-28 sm:px-10">
       <div className="mx-auto max-w-5xl">
         <SectionHeading
-          index="06"
+          index="~/contact"
           eyebrow="Contact"
           title="Let's build something."
           description="Open to internships, collaborations, and interesting problems."

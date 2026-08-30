@@ -14,7 +14,7 @@ export default function Experience() {
     <section id="experience" className="relative px-6 py-28 sm:px-10">
       <div className="mx-auto max-w-6xl">
         <SectionHeading
-          index="02"
+          index="~/exp"
           eyebrow="Experience"
           title="Beyond the codebase."
           description="Community leadership and open-source contribution — running in parallel with the shipping above."

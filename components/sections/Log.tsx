@@ -9,7 +9,7 @@ export default function Log() {
     <section id="log" className="relative px-6 py-28 sm:px-10">
       <div className="mx-auto max-w-4xl">
         <SectionHeading
-          index="05"
+          index="~/log"
           eyebrow="Changelog"
           title="A running log, not a resume."
           description="The story so far, in the order it happened."

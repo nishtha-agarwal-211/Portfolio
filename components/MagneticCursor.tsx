@@ -55,7 +55,7 @@ export default function MagneticCursor() {
           ringInnerRef.current.style.height = "auto";
           ringInnerRef.current.style.padding = "6px 14px";
           ringInnerRef.current.style.borderRadius = "20px";
-          ringInnerRef.current.style.borderColor = "rgba(124,58,237,0.5)";
+          ringInnerRef.current.style.borderColor = "rgba(110,91,255,0.5)";
           ringInnerRef.current.style.background = "rgba(14,19,34,0.85)";
           ringInnerRef.current.style.marginLeft = "-36px";
           ringInnerRef.current.style.marginTop = "-16px";
@@ -82,10 +82,10 @@ export default function MagneticCursor() {
           isHovering = interactive;
           if (dotInnerRef.current) {
             dotInnerRef.current.style.background = isHovering
-              ? "linear-gradient(135deg, #7C3AED, #06D6A0)"
+              ? "linear-gradient(135deg, #6E5BFF, #2CE6C6)"
               : "#F1F5F9";
             dotInnerRef.current.style.boxShadow = isHovering
-              ? "0 0 16px rgba(124,58,237,0.5)"
+              ? "0 0 16px rgba(110,91,255,0.5)"
               : "0 0 6px rgba(241,245,249,0.3)";
           }
           if (ringInnerRef.current) {
@@ -94,10 +94,10 @@ export default function MagneticCursor() {
             ringInnerRef.current.style.marginLeft = isHovering ? "-8px" : "0px";
             ringInnerRef.current.style.marginTop = isHovering ? "-8px" : "0px";
             ringInnerRef.current.style.borderColor = isHovering
-              ? "rgba(124,58,237,0.5)"
+              ? "rgba(110,91,255,0.5)"
               : "rgba(241,245,249,0.15)";
             ringInnerRef.current.style.background = isHovering
-              ? "rgba(124,58,237,0.06)"
+              ? "rgba(110,91,255,0.06)"
               : "transparent";
           }
         }

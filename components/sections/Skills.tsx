@@ -21,7 +21,7 @@ export default function Skills() {
     <section id="skills" className="relative px-6 py-28 sm:px-10">
       <div className="mx-auto max-w-6xl">
         <SectionHeading
-          index="04"
+          index="~/tools"
           eyebrow="Toolbox"
           title="What I reach for."
           description="Frontend-first, with backend fundamentals I'm actively deepening — plus the AI and DevOps tools I use to ship end to end."
@@ -69,7 +69,7 @@ export default function Skills() {
                         delay: 0.15 + j * 0.03,
                         ease: "easeOut",
                       }}
-                      className="rounded-lg border border-white/[0.08] bg-white/[0.04] px-3 py-1.5 text-sm text-ink transition-colors duration-300 hover:border-signal/40 hover:text-pulse hover:shadow-[0_0_16px_rgba(124,58,237,0.12)]"
+                      className="rounded-lg border border-white/[0.08] bg-white/[0.04] px-3 py-1.5 text-sm text-ink transition-colors duration-300 hover:border-signal/40 hover:text-pulse hover:shadow-[0_0_16px_rgba(110,91,255,0.12)]"
                     >
                       {item}
                     </motion.span>
